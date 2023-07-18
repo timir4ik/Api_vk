@@ -1,0 +1,463 @@
+{
+	"info": {
+		"_postman_id": "edf87759-9da7-408a-b2ec-e27067210be0",
+		"name": "API Vk",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26171031"
+	},
+	"item": [
+		{
+			"name": "Create Album",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "access_token",
+							"value": "{{access_token}}",
+							"type": "text"
+						},
+						{
+							"key": "title",
+							"value": "Test Api vk",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{base_url}}photos.createAlbum?v={{v}}",
+					"host": [
+						"{{base_url}}photos",
+						"createAlbum"
+					],
+					"query": [
+						{
+							"key": "v",
+							"value": "{{v}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Upload url",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}photos.getUploadServer?album_id={{album_id}}&access_token={{access_token}}&v={{v}}",
+					"host": [
+						"{{base_url}}photos",
+						"getUploadServer"
+					],
+					"query": [
+						{
+							"key": "album_id",
+							"value": "{{album_id}}"
+						},
+						{
+							"key": "access_token",
+							"value": "{{access_token}}"
+						},
+						{
+							"key": "v",
+							"value": "{{v}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add photo",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file1",
+							"type": "file",
+							"src": "/C:/API/Десп.jpg"
+						},
+						{
+							"key": "file2",
+							"type": "file",
+							"src": "/C:/API/Древо жизни.jpeg"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{upload_url}}",
+					"host": [
+						"{{upload_url}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Save photo",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "access_token",
+							"value": "{{access_token}}",
+							"type": "text"
+						},
+						{
+							"key": "album_id",
+							"value": "{{album_id}}",
+							"type": "text"
+						},
+						{
+							"key": "server",
+							"value": "236231",
+							"type": "text"
+						},
+						{
+							"key": "photos_list",
+							"value": "[{\"markers_restarted\":true,\"photo\":\"4e9f54c4a3:w\",\"sizes\":[],\"latitude\":0,\"longitude\":0,\"kid\":\"625baa66a0dd1b9173fef3da962790fe\",\"sizes2\":[[\"s\",\"e04b9829a6b5852b9e384902851ae88f460d8730a53d3dffff043e62\",\"-2232696551181996640\",75,50],[\"m\",\"13c4ac2637fb5553d5977d907cb92b9edc793bd5dd6ce6d91485e2c4\",\"142306760538717324\",130,87],[\"x\",\"15df204fae85b3490ab03b55cdc5ba5511a0bf93172d735a9c091bc5\",\"8323100746717042367\",604,403],[\"y\",\"48ed1490484d43237c62759a38250c4512afb18ea8f0ea6d23b92beb\",\"-9203133297226572420\",807,538],[\"z\",\"15c53726f2747f5fc4f32958e16e570b5aa8997fc2c2333f5ffc3ebc\",\"6400468463926344910\",1280,853],[\"w\",\"dc815a9e4bb35b70e4d9ce534b4d672d1b4ff042b3de91be8da5e042\",\"-8319850341937958258\",2560,1706],[\"o\",\"13c4ac2637fb5553d5977d907cb92b9edc793bd5dd6ce6d91485e2c4\",\"-6171892791504304582\",130,87],[\"p\",\"bd4e8d66644520d4c1966d6e1fd799427cf934b0fc40e53ac862ecd2\",\"-520227697767082563\",200,133],[\"q\",\"6d194d597ce4ff704e608801d69087b7da4b3e773305d1d24460591b\",\"-2538061914009654179\",320,213],[\"r\",\"07013d8bba0069d8d493ea2255cad527caf8ce139cc7b3ceddb60c00\",\"-5817695002109371378\",510,340]],\"urls\":[],\"urls2\":[\"4EuYKaa1hSueOEkChRroj0YNhzClPT3__wQ-Yg/oK2O51DeA-E.jpg\",\"E8SsJjf7VVPVl32QfLkrntx5O9XdbObZFIXixA/jPwLpz6T-QE.jpg\",\"Fd8gT66Fs0kKsDtVzcW6VRGgv5MXLXNanAkbxQ/v5bbDQiYgXM.jpg\",\"SO0UkEhNQyN8YnWaOCUMRRKvsY6o8OptI7kr6w/fJ09xgbnR4A.jpg\",\"FcU3JvJ0f1_E8ylY4W5XC1qomX_CwjM_X_w-vA/znxrJCgI01g.jpg\",\"3IFankuzW3Dk2c5TS01nLRtP8EKz3pG-jaXgQg/jjJgyDH0iYw.jpg\",\"E8SsJjf7VVPVl32QfLkrntx5O9XdbObZFIXixA/OoaXyjQIWao.jpg\",\"vU6NZmRFINTBlm1uH9eZQnz5NLD8QOU6yGLs0g/vRVGSKrHx_g.jpg\",\"bRlNWXzk_3BOYIgB1pCHt9pLPnczBdHSRGBZGw/XayB7SL-xtw.jpg\",\"BwE9i7oAadjUk-oiVcrVJ8r4zhOcx7PO3bYMAA/Dpy0EzhlQ68.jpg\"]},{\"markers_restarted\":true,\"photo\":\"412f338ef0:w\",\"sizes\":[],\"latitude\":0,\"longitude\":0,\"kid\":\"6217ada8b0bcf79a303f7a7c0a2cd3af\",\"sizes2\":[[\"s\",\"7707f05b67f31afe8d96d43ec797626d4bd5f6ac22f464547e52c85e\",\"1501357219106342207\",75,50],[\"m\",\"b69fbed1e5bf64a1620db8768b2daabc7f667cf1c0ba45398d06d320\",\"-1173329231831200120\",130,87],[\"x\",\"b090770bd7a2af7cee00e3eb84a933104b9ecb2380eb6821b841a553\",\"-4444276495793868179\",604,403],[\"y\",\"b5a486e8ba11e21687f3e07c2af702a9696061ab781dfb102210cf58\",\"3978895000870315205\",807,538],[\"z\",\"06ebf90e85afcbdbb11bf9197422832c1ee40413506433ee47247075\",\"-7789854786448797116\",1280,854],[\"w\",\"13657b1944493437c779ad2b84020daeae71fd8adda84bd212c99abb\",\"8950876343117757963\",2000,1335],[\"o\",\"b69fbed1e5bf64a1620db8768b2daabc7f667cf1c0ba45398d06d320\",\"-837170393368634707\",130,87],[\"p\",\"a780fc3798836f3df7f95d3b9cdf48f95760de7808494667496860fb\",\"-5468124387193848145\",200,133],[\"q\",\"131d12998627ab74b9cb3f63a6224967d483525bc3c2002c2de15d1e\",\"-1461664298733694634\",320,214],[\"r\",\"7951ace5dd9119dc9cf1d8164bd0e5ad9ffbeaf4271002f9744f6af8\",\"1024698329465790893\",510,340]],\"urls\":[],\"urls2\":[\"dwfwW2fzGv6NltQ-x5dibUvV9qwi9GRUflLIXg/P0XNrW_k1RQ.jpg\",\"tp--0eW_ZKFiDbh2iy2qvH9mfPHAukU5jQbTIA/iI4evEd_t-8.jpg\",\"sJB3C9eir3zuAOPrhKkzEEueyyOA62ghuEGlUw/bbKW6BLCUsI.jpg\",\"taSG6LoR4haH8-B8KvcCqWlgYat4HfsQIhDPWA/xeRzFezfNzc.jpg\",\"Buv5DoWvy9uxG_kZdCKDLB7kBBNQZDPuRyRwdQ/RNLXGVjg5JM.jpg\",\"E2V7GURJNDfHea0rhAINrq5x_YrdqEvSEsmauw/Cz77O5zmN3w.jpg\",\"tp--0eW_ZKFiDbh2iy2qvH9mfPHAukU5jQbTIA/rdrJdvbFYfQ.jpg\",\"p4D8N5iDbz33-V07nN9I-Vdg3ngISUZnSWhg-w/r_6oWddRHbQ.jpg\",\"Ex0SmYYnq3S5yz9jpiJJZ9SDUlvDwgAsLeFdHg/VpEbhRAgt-s.jpg\",\"eVGs5d2RGdyc8dgWS9DlrZ_76vQnEAL5dE9q-A/raG-mbN1OA4.jpg\"]}]",
+							"type": "text"
+						},
+						{
+							"key": "hash",
+							"value": "6b6ac89b43a356e24735108a17fbf7d5",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{base_url}}photos.save?v={{v}}",
+					"host": [
+						"{{base_url}}photos",
+						"save"
+					],
+					"query": [
+						{
+							"key": "v",
+							"value": "{{v}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Info",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "{{base_url}}photos.get?v={{v}}&album_id={{album_id}}&access_token={{access_token}}",
+					"host": [
+						"{{base_url}}photos",
+						"get"
+					],
+					"query": [
+						{
+							"key": "v",
+							"value": "{{v}}"
+						},
+						{
+							"key": "album_id",
+							"value": "{{album_id}}"
+						},
+						{
+							"key": "access_token",
+							"value": "{{access_token}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create comment 2",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "access_token",
+							"value": "{{access_token}}",
+							"type": "text"
+						},
+						{
+							"key": "owner_id",
+							"value": "{{owner_id}}",
+							"type": "text"
+						},
+						{
+							"key": "photo_id",
+							"value": "457239558",
+							"type": "text"
+						},
+						{
+							"key": "message",
+							"value": "Чудный день",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{base_url}}photos.createComment?v={{v}}",
+					"host": [
+						"{{base_url}}photos",
+						"createComment"
+					],
+					"query": [
+						{
+							"key": "v",
+							"value": "{{v}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create comment 2",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "access_token",
+							"value": "{{access_token}}",
+							"type": "text"
+						},
+						{
+							"key": "owner_id",
+							"value": "{{owner_id}}",
+							"type": "text"
+						},
+						{
+							"key": "photo_id",
+							"value": "457239559",
+							"type": "text"
+						},
+						{
+							"key": "message",
+							"value": "Древо жизни",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{base_url}}photos.createComment?v={{v}}",
+					"host": [
+						"{{base_url}}photos",
+						"createComment"
+					],
+					"query": [
+						{
+							"key": "v",
+							"value": "{{v}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Edit Comment",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "access_token",
+							"value": "{{access_token}}",
+							"type": "text"
+						},
+						{
+							"key": "owner_id",
+							"value": "{{owner_id}}",
+							"type": "text"
+						},
+						{
+							"key": "photo_id",
+							"value": "457239558",
+							"type": "text"
+						},
+						{
+							"key": "message",
+							"value": "Волшебный вечер",
+							"type": "text"
+						},
+						{
+							"key": "comment_id",
+							"value": "12",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{base_url}}photos.editComment?v={{v}}",
+					"host": [
+						"{{base_url}}photos",
+						"editComment"
+					],
+					"query": [
+						{
+							"key": "v",
+							"value": "{{v}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete photo",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "access_token",
+							"value": "{{access_token}}",
+							"type": "text"
+						},
+						{
+							"key": "owner_id",
+							"value": "{{owner_id}}",
+							"type": "text"
+						},
+						{
+							"key": "photo_id",
+							"value": "457239558",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{base_url}}photos.delete?v={{v}}",
+					"host": [
+						"{{base_url}}photos",
+						"delete"
+					],
+					"query": [
+						{
+							"key": "v",
+							"value": "{{v}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Album",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "access_token",
+							"value": "{{access_token}}",
+							"type": "text"
+						},
+						{
+							"key": "album_id",
+							"value": "{{album_id}}",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{base_url}}photos.deleteAlbum?v={{v}}",
+					"host": [
+						"{{base_url}}photos",
+						"deleteAlbum"
+					],
+					"query": [
+						{
+							"key": "v",
+							"value": "{{v}}"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "access_token",
+			"value": "vk1.a.hMSUCzDp7khfTOV14Cz-tfzdDiPi3dWEDhJldZCT-rirg_b1BwCOI9Z64EMsJbczPNDAGePo3NPlbdfF3MR1K887gxV6wW2mrpN7-GeW2k9rF-HgAx_3t4DhKH1YFOunqdDMF-sbesngtgCO_Ik8A6H_fQd9ywe81MU_ig2ddtdv9Cifuvop2clv0ZwSfxoJrWWRhcBwrzAv5BwAkVhkrA",
+			"type": "string"
+		},
+		{
+			"key": "base_url",
+			"value": "https://api.vk.com/method/",
+			"type": "string"
+		},
+		{
+			"key": "v",
+			"value": "5.131",
+			"type": "string"
+		},
+		{
+			"key": "owner_id",
+			"value": "528723373",
+			"type": "string"
+		},
+		{
+			"key": "album_id",
+			"value": "297117042",
+			"type": "string"
+		},
+		{
+			"key": "upload_url",
+			"value": "https://pu.vk.com/c236231/ss2266/upload.php?act=do_add&mid=528723373&aid=297117042&gid=0&hash=66e2779e56d740b89f8061237c6cf14f&rhash=cf51f9208e1dc560cdc9ca905102e9c5&swfupload=1&api=1",
+			"type": "string"
+		}
+	]
+}
